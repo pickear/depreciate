@@ -1,0 +1,35 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "69q4K85KCjqPDg4HznrUb4j3Kds=",
+			"path": "github.com/PuerkitoBio/goquery",
+			"revision": "bc4e06eb0792d1a14661d19dd7822163c25bb6bd",
+			"revisionTime": "2017-12-06T12:16:06Z"
+		},
+		{
+			"checksumSHA1": "Bgs5fKx4V8jxL/m/krOLmhS4az4=",
+			"path": "github.com/andybalholm/cascadia",
+			"revision": "349dd0209470eabd9514242c688c403c0926d266",
+			"revisionTime": "2016-12-24T14:14:13Z"
+		},
+		{
+			"checksumSHA1": "laW1Qi8C/GJstFvBMG9bgozPVzM=",
+			"path": "github.com/moxar/arithmetic",
+			"revision": "05927d9f61253f6d1d99e5c818c40cd3a1ab8068",
+			"revisionTime": "2016-10-10T11:58:33Z"
+		},
+		{
+			"checksumSHA1": "sKnGHeCXzx8PGivXbqTz4zc4k8I=",
+			"path": "github.com/wspl/creeper",
+			"revision": "eb1753da1c54ade30e8e6ee82e1923b4473dbc13",
+			"revisionTime": "2017-05-16T12:14:13Z"
+		},
+		{
+			"path": "golang.org/x/net/html",
+			"revision": ""
+		}
+	],
+	"rootPath": "depreciate"
+}

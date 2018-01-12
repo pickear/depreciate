@@ -1,0 +1,35 @@
+1 + 2 = 3
+1 + 2.0 = 3
+a + 2.0 = error
+"a" + 2.0 = error
+2 % 3 = 2
+2.4 % 3 = error
+e == e = true
+e > 2 = true
+"a" == "a" = true
+e == 4 = false
+max(1,2,3,4) = 4
+if(true,0,1) = 0
+if(false,1,0) = 0
+if(max(e,2)>4,1,0) = 0
+true&&true = true
+true&&false = false
+false&&false = false
+true||true = true
+true||false = true
+false||false = false
+false OR true = true
+false or true = true
+true and true = true
+true AND true = true
+!true = false
+!false = true
+not true = false
+not false = true
+NOT true = false
+if(true && not false, true, false)=true
+2/0 = error
+Max(00.100, 22, 00.300) + Min(8, 00.200, 2 + 5) * 2 = 22.4
+Max(00.100, 22, 00.300) + Min(8, 00.200, 2 + 5) * 2 == 54 && Mean(1, 2, 3) != 3 = false
+Max(00.100, 22, 00.300) + Min(8, 00.200, 2 + 5) * 2 + Max(00.100, 22, 00.300) + Min(8, 00.200, 2 + 5) * 3 + Max(00.100, 22, 00.300) + Min(8, 00.200, 2 + 5) * 4 = 67.8
+Min(1, 2) = 1
