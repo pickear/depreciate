@@ -2,11 +2,33 @@ package main
 
 import (
 	"github.com/wspl/creeper"
+	"github.com/facebookgo/inject"
+	"depreciate/repository"
+	"depreciate/user"
+	"fmt"
 )
 
 
 func main(){
 
+	var graph inject.Graph
+
+	u := user.User{}
+	userRepository := repository.NewUserRepository()
+	err := graph.Provide(
+		&inject.Object{Value: &u},
+		&inject.Object{Value: userRepository},
+	)
+
+	if(err != nil){
+		fmt.Println("inject Provide err")
+	}
+
+	 if err = graph.Populate();err != nil{
+		fmt.Println("inject Populate err")
+	 }
+
+	 u.Save()
 	rule := "page(@page=1) = \"https://search.jd.com/Search?keyword=摩托罗拉 Moto M(XT1662) 4G+32G 耀世金移动联通电信4G手机 双卡双待&enc=utf-8&page={@page}\"\n" +
 	"news[]: page -> $(\"li.gl-item\")\n" +
 	"    title: $(\"div.p-name a em\").text\n" +
