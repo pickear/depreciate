@@ -15,10 +15,100 @@
 			"revisionTime": "2016-12-24T14:14:13Z"
 		},
 		{
+			"checksumSHA1": "II3c5ZDrnvU+ZN/5r6CKQc8Sqbw=",
+			"path": "github.com/facebookgo/inject",
+			"revision": "cc1aa653e50f6a9893bcaef89e673e5b24e1e97b",
+			"revisionTime": "2016-10-06T17:47:21Z"
+		},
+		{
+			"checksumSHA1": "3QW89DuQh3wqK3GUfaJ4Up2oo5o=",
+			"path": "github.com/facebookgo/structtag",
+			"revision": "217e25fb96916cc60332e399c9aa63f5c422ceed",
+			"revisionTime": "2015-02-14T07:43:06Z"
+		},
+		{
+			"checksumSHA1": "+33WwYedqXmUOGwQpkIDr/zfd8c=",
+			"path": "github.com/gobwas/glob",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "AjR+XnJ6+uUtxjpp8Y/CAUvAXK8=",
+			"path": "github.com/gobwas/glob/compiler",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "vSQFyuvjR8ZeSw/RdcwWVmXWcuo=",
+			"path": "github.com/gobwas/glob/match",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "gO8PCB8Ns6PnuyAJ9sfy+qYAFpY=",
+			"path": "github.com/gobwas/glob/syntax",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "20z78qqEw0aatRZpL3Q2Q63/Jt4=",
+			"path": "github.com/gobwas/glob/syntax/ast",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "PcccxZ+YbBPLOHJ1wn/BfK6JnZ4=",
+			"path": "github.com/gobwas/glob/syntax/lexer",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "TTVTu4+Labx9Nhwzk/Vwqy//zdg=",
+			"path": "github.com/gobwas/glob/util/runes",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "skWYfohRKrjXm8XbdyWlSiJHuYI=",
+			"path": "github.com/gobwas/glob/util/strings",
+			"revision": "51eb1ee00b6d931c66d229ceeb7c31b985563420",
+			"revisionTime": "2017-02-12T20:01:51Z"
+		},
+		{
+			"checksumSHA1": "ZOnZBQLqCk2l9plcHdjgXUQRR5k=",
+			"path": "github.com/gocolly/colly",
+			"revision": "dface0bcda09299be0e9319815121315514f6d0e",
+			"revisionTime": "2018-01-06T20:53:27Z"
+		},
+		{
+			"checksumSHA1": "+c8fFwTJSN3oCb4GP+TFZMR+erM=",
+			"path": "github.com/gocolly/colly/debug",
+			"revision": "dface0bcda09299be0e9319815121315514f6d0e",
+			"revisionTime": "2018-01-06T20:53:27Z"
+		},
+		{
+			"checksumSHA1": "kmauqEUBVMGn4JHpDR8ThKCIUEo=",
+			"path": "github.com/kennygrant/sanitize",
+			"revision": "2e6820834a1f36c626bf19a253b7d3cc060e9b8b",
+			"revisionTime": "2017-10-05T16:48:50Z"
+		},
+		{
 			"checksumSHA1": "laW1Qi8C/GJstFvBMG9bgozPVzM=",
 			"path": "github.com/moxar/arithmetic",
 			"revision": "05927d9f61253f6d1d99e5c818c40cd3a1ab8068",
 			"revisionTime": "2016-10-10T11:58:33Z"
+		},
+		{
+			"checksumSHA1": "9Aoisa7A4d17LuuCjxm8WHrdWOU=",
+			"path": "github.com/saintfish/chardet",
+			"revision": "3af4cd4741ca4f3eb0c407c034571a6fb0ea529c",
+			"revisionTime": "2012-08-16T06:12:21Z"
+		},
+		{
+			"checksumSHA1": "bsQipK5XzeZSzHgiSRW0WxkisK8=",
+			"path": "github.com/temoto/robotstxt",
+			"revision": "9e4646fa705336d5b2fa9dddfafbe0a1a965acd7",
+			"revisionTime": "2017-06-03T01:35:57Z"
 		},
 		{
 			"checksumSHA1": "sKnGHeCXzx8PGivXbqTz4zc4k8I=",
@@ -28,6 +118,18 @@
 		},
 		{
 			"path": "golang.org/x/net/html",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/html/charset",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/urlfetch",
 			"revision": ""
 		}
 	],
