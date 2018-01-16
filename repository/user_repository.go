@@ -12,7 +12,6 @@ type UserRepositoryImpl struct{
 
 func (repository UserRepositoryImpl) Save(user user.User) (user.User, error){
 	fmt.Println("user save")
-	//err := repository.collection().Insert(user)
 	_,err := repository.collection().Upsert(bson.M{"name":user.Name},user)
 	if(err != nil){
 		fmt.Println(err)
@@ -50,7 +49,7 @@ func (repository UserRepositoryImpl) Update(user user.User) (user.User,error){
 
 func (repository UserRepositoryImpl) Find(name string) user.User{
 	var user user.User
-	err := repository.collection().Find(bson.M{"name":user.Name}).One(&user)
+	err := repository.collection().Find(bson.M{"name":name}).One(&user)
 	if(err != nil){
 		fmt.Println(err)
 	}

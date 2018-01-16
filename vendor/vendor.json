@@ -15,6 +15,12 @@
 			"revisionTime": "2016-12-24T14:14:13Z"
 		},
 		{
+			"checksumSHA1": "GcIrB1ug6mS8aG73v1KtlHfva9Q=",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "ecdeabc65495df2dec95d7c4a4c3e021903035e5",
+			"revisionTime": "2017-10-02T20:02:53Z"
+		},
+		{
 			"checksumSHA1": "II3c5ZDrnvU+ZN/5r6CKQc8Sqbw=",
 			"path": "github.com/facebookgo/inject",
 			"revision": "cc1aa653e50f6a9893bcaef89e673e5b24e1e97b",
@@ -99,10 +105,50 @@
 			"revisionTime": "2016-10-10T11:58:33Z"
 		},
 		{
+			"checksumSHA1": "R3yk3OJzuq4MVfVGX5AhkkYv1ko=",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
+			"revisionTime": "2016-01-10T10:55:54Z"
+		},
+		{
 			"checksumSHA1": "9Aoisa7A4d17LuuCjxm8WHrdWOU=",
 			"path": "github.com/saintfish/chardet",
 			"revision": "3af4cd4741ca4f3eb0c407c034571a6fb0ea529c",
 			"revisionTime": "2012-08-16T06:12:21Z"
+		},
+		{
+			"path": "github.com/stretchr",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "Ot31ub6E06DePPy4YWIbCiXbnX0=",
+			"path": "github.com/stretchr/objx",
+			"revision": "bc43df392909781b3b7b1912fcf414b6e088936e",
+			"revisionTime": "2018-01-10T15:16:45Z"
+		},
+		{
+			"checksumSHA1": "gfRcEAlBmCxH5pEdV2PXtVtQkts=",
+			"path": "github.com/stretchr/testify",
+			"revision": "87b1dfb5b2fa649f52695dd9eae19abe404a4308",
+			"revisionTime": "2017-12-31T12:27:32Z"
+		},
+		{
+			"checksumSHA1": "80Ch3QCffEfsrBAU+tMaDuSn5HU=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "87b1dfb5b2fa649f52695dd9eae19abe404a4308",
+			"revisionTime": "2017-12-31T12:27:32Z"
+		},
+		{
+			"checksumSHA1": "D4bXPof9qSyXm4ZssBn6J5/FX0U=",
+			"path": "github.com/stretchr/testify/http",
+			"revision": "87b1dfb5b2fa649f52695dd9eae19abe404a4308",
+			"revisionTime": "2017-12-31T12:27:32Z"
+		},
+		{
+			"checksumSHA1": "g8TD6RWKdvSOGc9C+beOF+K40/0=",
+			"path": "github.com/stretchr/testify/mock",
+			"revision": "87b1dfb5b2fa649f52695dd9eae19abe404a4308",
+			"revisionTime": "2017-12-31T12:27:32Z"
 		},
 		{
 			"checksumSHA1": "bsQipK5XzeZSzHgiSRW0WxkisK8=",

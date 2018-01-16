@@ -28,7 +28,7 @@ func main(){
 	}
 
 	if err = graph.Populate();err != nil{
-	fmt.Println(err)
+		fmt.Println(err)
     }
 
 	u.Name = "Dylan"
