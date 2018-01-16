@@ -13,22 +13,28 @@ func main(){
 
 	var graph inject.Graph
 
-	u := user.User{}
+	var u user.User
 	userRepository := repository.NewUserRepository()
+	session := repository.MongoConnect()
+	defer session.Close()
 	err := graph.Provide(
 		&inject.Object{Value: &u},
 		&inject.Object{Value: userRepository},
+		&inject.Object{Value: session},
 	)
 
 	if(err != nil){
-		fmt.Println("inject Provide err")
+		fmt.Println(err)
 	}
 
-	 if err = graph.Populate();err != nil{
-		fmt.Println("inject Populate err")
-	 }
+	if err = graph.Populate();err != nil{
+	fmt.Println(err)
+    }
 
-	 u.Save()
+	u.Name = "Dylan"
+	u.Save()
+	uu := u.Find()
+	fmt.Println(uu.Name)
 	rule := "page(@page=1) = \"https://search.jd.com/Search?keyword=摩托罗拉 Moto M(XT1662) 4G+32G 耀世金移动联通电信4G手机 双卡双待&enc=utf-8&page={@page}\"\n" +
 	"news[]: page -> $(\"li.gl-item\")\n" +
 	"    title: $(\"div.p-name a em\").text\n" +

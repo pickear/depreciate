@@ -131,6 +131,10 @@
 		{
 			"path": "google.golang.org/appengine/urlfetch",
 			"revision": ""
+		},
+		{
+			"path": "gopkg.in/mgo.v2",
+			"revision": ""
 		}
 	],
 	"rootPath": "depreciate"
