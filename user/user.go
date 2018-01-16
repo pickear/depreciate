@@ -1,7 +1,10 @@
 package user
 
+import (
+	"gopkg.in/mgo.v2/bson"
+)
 type User struct {
-	Id string
+	Id bson.ObjectId `json:"id" bson:"_id"`
 	Name string    //用户名
 	Password string   //密码
 	Email string    //邮箱

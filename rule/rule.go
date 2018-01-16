@@ -1,8 +1,11 @@
 package rule
 
+import (
+	"gopkg.in/mgo.v2/bson"
+)
 
 type Rule struct {
-	Id string
+	Id bson.ObjectId `json:"id" bson:"_id"`
 	Url string
 	Name string
 	Sku string

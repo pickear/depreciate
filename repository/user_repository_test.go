@@ -57,3 +57,29 @@ func TestFind(t *testing.T){
 	user := userRepository.Find("Dylan")
 	assert.Equal(user.Name,"Dylan","find user dylan err")
 }
+
+func TestUpdate(t *testing.T){
+	assert := assert.New(t)
+	var graph inject.Graph
+
+	userRepository := NewUserRepository()
+	session := MongoConnect()
+	defer session.Close()
+	err := graph.Provide(
+		&inject.Object{Value: userRepository},
+		&inject.Object{Value: session},
+	)
+
+	if(err != nil){
+		fmt.Println(err)
+	}
+
+	if err = graph.Populate();err != nil{
+		fmt.Println(err)
+    }
+
+	u := userRepository.Find("Dylan")
+	u.Password = "456"
+	u,err = userRepository.Update(u)
+	assert.Equal(err,nil,"update user err")
+}

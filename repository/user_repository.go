@@ -11,8 +11,9 @@ type UserRepositoryImpl struct{
 }
 
 func (repository UserRepositoryImpl) Save(user user.User) (user.User, error){
+	user.Id = bson.NewObjectId()
 	fmt.Println("user save")
-	_,err := repository.collection().Upsert(bson.M{"name":user.Name},user)
+	_,err := repository.collection().Upsert(bson.M{"_id":user.Id},user)
 	if(err != nil){
 		fmt.Println(err)
 		return user,err
@@ -39,7 +40,7 @@ func (repository UserRepositoryImpl) Delete(name string) error{
 func (repository UserRepositoryImpl) Update(user user.User) (user.User,error){
 	fmt.Println("user update")
 
-	err := repository.collection().Update(bson.M{"name":user.Name},bson.M{"$set":bson.M{"name":user.Name,"password":user.Password,"email":user.Email}})
+	err := repository.collection().Update(bson.M{"name":user.Name},user)
 	if err != nil{
 		fmt.Println(err)
 		return user,err
