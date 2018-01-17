@@ -45,11 +45,7 @@ func (repository GoodsRepositoryImpl) Delete(sku string) error{
 func (repository GoodsRepositoryImpl) Find(sku string) (modle.Goods,error){
 	var goods modle.Goods
 	err := repository.collection().Find(bson.M{"sku":sku}).One(&goods)
-	if(err != nil){
-		fmt.Println(err)
-		return goods,err
-	}
-	return goods,nil
+	return goods,err
 }
 
 func (repository GoodsRepositoryImpl) Search(name string) []modle.Goods{

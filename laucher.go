@@ -38,7 +38,7 @@ func main(){
 
 	r := modle.Jd()
 	r.Title = "京东moto"
-	r.Url = "https://search.jd.com/Search?keyword=moto%20z2%20play&enc=utf-8&page={@page}"
+	r.Url = "https://search.jd.com/Search?keyword=手机&enc=utf-8&page={@page}"
 	
 	rule := "page(@page=1) = \""+r.Url+"\"\n" +
 	"news[]: page -> $(\"li.gl-item\")\n" +
