@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSave(t *testing.T){
+func TestRuleSave(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 
@@ -34,7 +34,7 @@ func TestSave(t *testing.T){
 }
 
 
-func TestFind(t *testing.T){
+func TestRuleFind(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 
@@ -58,7 +58,7 @@ func TestFind(t *testing.T){
 	assert.Equal(rule.Title,"京东moto","search rule err")
 }
 
-func TestUpdate(t *testing.T){
+func TestRuleUpdate(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 

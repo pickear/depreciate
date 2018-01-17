@@ -7,6 +7,8 @@ import (
 	"depreciate/modle"
 	"fmt"
 	"strconv"
+	"time"
+	"depreciate/util"
 )
 
 
@@ -16,11 +18,13 @@ func main(){
 
 	userRepository := repository.NewUserRepository()
 	ruleRepository := repository.NewRuleRepository()
+	goodsRepository := repository.NewGoodsRepository()
 	session := repository.MongoConnect()
 	defer session.Close()
 	err := graph.Provide(
 		&inject.Object{Value: userRepository},
 		&inject.Object{Value: ruleRepository},
+		&inject.Object{Value: goodsRepository},
 		&inject.Object{Value: session},
 	)
 
@@ -49,8 +53,10 @@ func main(){
 			fmt.Println("价格转换失败")
 			return
 		}
-		goods := modle.Goods{Name:c.String("name"),Sku:c.String("sku"),Price:price}
-
+		time := time.Now().Format(util.TimeLayout)
+		prices := []modle.Price{modle.Price{Price:price,Time:time}}
+		goods := modle.Goods{Name:c.String("name"),Sku:c.String("sku"),Prices:prices}
+		goodsRepository.Save(goods)
 		fmt.Println(goods)
 		fmt.Println("===")
 	})

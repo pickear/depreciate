@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSave(t *testing.T){
+func TestUserSave(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 
@@ -34,7 +34,7 @@ func TestSave(t *testing.T){
 }
 
 
-func TestFind(t *testing.T){
+func TestUserFind(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 
@@ -54,11 +54,11 @@ func TestFind(t *testing.T){
 		fmt.Println(err)
     }
 
-	user := userRepository.Find("Dylan")
+	user,_ := userRepository.Find("Dylan")
 	assert.Equal(user.Name,"Dylan","find user dylan err")
 }
 
-func TestUpdate(t *testing.T){
+func TestUserUpdate(t *testing.T){
 	assert := assert.New(t)
 	var graph inject.Graph
 
@@ -78,7 +78,7 @@ func TestUpdate(t *testing.T){
 		fmt.Println(err)
     }
 
-	u := userRepository.Find("Dylan")
+	u,_ := userRepository.Find("Dylan")
 	u.Password = "456"
 	u,err = userRepository.Update(u)
 	assert.Equal(err,nil,"update user err")

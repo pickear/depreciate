@@ -14,8 +14,15 @@ type User struct {
 
 
 type UserRepository interface {
+	//保存用户(新增，更新)
 	Save(user User) (User, error)
+
+	//根据用户名删除用户
 	Delete(name string) error
+
+	//根据用户名更新用户
 	Update(user User) (User,error)
-	Find(name string) User
+
+	//根据用户名查找用户
+	Find(name string) (User,error)
 }

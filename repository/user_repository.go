@@ -44,13 +44,13 @@ func (repository UserRepositoryImpl) Update(user modle.User) (modle.User,error){
 	return user,nil
 }
 
-func (repository UserRepositoryImpl) Find(name string) modle.User{
+func (repository UserRepositoryImpl) Find(name string) (modle.User,error){
 	var user modle.User
 	err := repository.collection().Find(bson.M{"name":name}).One(&user)
 	if(err != nil){
 		fmt.Println(err)
 	}
-	return user
+	return user,err
 }
 
 func (ur UserRepositoryImpl) collection() *mgo.Collection{

@@ -45,13 +45,13 @@ func (repository RuleRepositoryImpl) Update(rule modle.Rule) (modle.Rule,error){
 	return rule,nil
 }
 
-func (repository RuleRepositoryImpl) Find(id bson.ObjectId) modle.Rule{
+func (repository RuleRepositoryImpl) Find(id bson.ObjectId) (modle.Rule,error){
 	var rule modle.Rule
 	err := repository.collection().Find(bson.M{"_id":id}).One(&rule)
 	if(err != nil){
 		fmt.Println(err)
 	}
-	return rule
+	return rule,err
 }
 
 func (repository RuleRepositoryImpl) Search(title string) modle.Rule{

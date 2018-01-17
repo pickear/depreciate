@@ -25,7 +25,7 @@ type RuleRepository interface {
 	Update(rule Rule) (Rule,error)
 
 	//根据id查找规则
-	Find(id bson.ObjectId) Rule
+	Find(id bson.ObjectId) (Rule,error)
 
 	//根据规则标题模糊搜索规则
 	Search(title string) Rule
