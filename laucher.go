@@ -4,10 +4,8 @@ import (
 	"github.com/wspl/creeper"
 	"github.com/facebookgo/inject"
 	"depreciate/repository"
-	_ "depreciate/user"
-	"depreciate/rule"
+	"depreciate/modle"
 	"fmt"
-	"depreciate/goods"
 	"strconv"
 )
 
@@ -34,7 +32,7 @@ func main(){
 		fmt.Println(err)
     }
 
-	r := rule.Jd()
+	r := modle.Jd()
 	r.Title = "京东moto"
 	r.Url = "https://search.jd.com/Search?keyword=moto%20z2%20play&enc=utf-8&page={@page}"
 	
@@ -51,7 +49,7 @@ func main(){
 			fmt.Println("价格转换失败")
 			return
 		}
-		goods := goods.Goods{Name:c.String("name"),Sku:c.String("sku"),Price:price}
+		goods := modle.Goods{Name:c.String("name"),Sku:c.String("sku"),Price:price}
 
 		fmt.Println(goods)
 		fmt.Println("===")

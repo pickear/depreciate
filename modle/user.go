@@ -1,4 +1,4 @@
-package user
+package modle
 
 import (
 	"gopkg.in/mgo.v2/bson"

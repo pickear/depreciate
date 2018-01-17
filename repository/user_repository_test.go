@@ -2,7 +2,7 @@ package repository
 
 import (
 	"testing"
-	"depreciate/user"
+	"depreciate/modle"
 	"github.com/facebookgo/inject"
 	"fmt"
 	"github.com/stretchr/testify/assert"
@@ -28,7 +28,7 @@ func TestSave(t *testing.T){
 		fmt.Println(err)
 	}
 	
-	_,err = userRepository.Save(user.User{Name:"Dylan",Password:"123",Email:"54646@qq.com"})
+	_,err = userRepository.Save(modle.User{Name:"Dylan",Password:"123",Email:"54646@qq.com"})
 
 	assert.Equal(err,nil,"save user err")
 }

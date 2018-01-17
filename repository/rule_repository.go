@@ -1,7 +1,7 @@
 package repository
 
 import(
-	"depreciate/rule"
+	"depreciate/modle"
 	"fmt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -10,7 +10,7 @@ type RuleRepositoryImpl struct{
 	Mgo *mgo.Session `inject:""`
 }
 
-func (repository RuleRepositoryImpl) Save(rule rule.Rule) (rule.Rule, error){
+func (repository RuleRepositoryImpl) Save(rule modle.Rule) (modle.Rule, error){
 
 	if len(rule.Id) <= 0{
 		rule.Id = bson.NewObjectId()
@@ -34,7 +34,7 @@ func (repository RuleRepositoryImpl) Delete(id bson.ObjectId) error{
 	return nil
 }
 
-func (repository RuleRepositoryImpl) Update(rule rule.Rule) (rule.Rule,error){
+func (repository RuleRepositoryImpl) Update(rule modle.Rule) (modle.Rule,error){
 	fmt.Println("user rule")
 
 	err := repository.collection().Update(bson.M{"_id":rule.Id},rule)
@@ -45,8 +45,8 @@ func (repository RuleRepositoryImpl) Update(rule rule.Rule) (rule.Rule,error){
 	return rule,nil
 }
 
-func (repository RuleRepositoryImpl) Find(id bson.ObjectId) rule.Rule{
-	var rule rule.Rule
+func (repository RuleRepositoryImpl) Find(id bson.ObjectId) modle.Rule{
+	var rule modle.Rule
 	err := repository.collection().Find(bson.M{"_id":id}).One(&rule)
 	if(err != nil){
 		fmt.Println(err)
@@ -54,8 +54,8 @@ func (repository RuleRepositoryImpl) Find(id bson.ObjectId) rule.Rule{
 	return rule
 }
 
-func (repository RuleRepositoryImpl) Search(title string) rule.Rule{
-	var rule rule.Rule
+func (repository RuleRepositoryImpl) Search(title string) modle.Rule{
+	var rule modle.Rule
 	err := repository.collection().Find(bson.M{"title":title}).One(&rule)
 	if(err != nil){
 		fmt.Println(err)

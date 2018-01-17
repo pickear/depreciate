@@ -2,7 +2,7 @@ package repository
 
 import (
 	"testing"
-	"depreciate/rule"
+	"depreciate/modle"
 	"github.com/facebookgo/inject"
 	"fmt"
 	"github.com/stretchr/testify/assert"
@@ -27,7 +27,7 @@ func TestSave(t *testing.T){
 	if err = graph.Populate();err != nil{
 		fmt.Println(err)
 	}
-	r := rule.Rule{Title:"京东moto",Url:"https://search.jd.com/Search?keyword=摩托罗拉 Moto M(XT1662) 4G+32G 耀世金移动联通电信4G手机 双卡双待&enc=utf-8&page={@page}",Name:"div.p-name a em",Sku:"div.p-price strong",Price:"div.p-price strong i"}
+	r := modle.Rule{Title:"京东moto",Url:"https://search.jd.com/Search?keyword=摩托罗拉 Moto M(XT1662) 4G+32G 耀世金移动联通电信4G手机 双卡双待&enc=utf-8&page={@page}",Name:"div.p-name a em",Sku:"div.p-price strong",Price:"div.p-price strong i"}
 	_,err = ruleRepository.Save(r)
 
 	assert.Equal(err,nil,"save user err")

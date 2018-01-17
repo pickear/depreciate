@@ -1,4 +1,4 @@
-package goods
+package modle
 
 import (
 	"gopkg.in/mgo.v2/bson"
