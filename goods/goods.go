@@ -1,9 +1,12 @@
 package goods
 
+import (
+	"gopkg.in/mgo.v2/bson"
+)
 
 type Goods struct {
-	Id string
+	Id bson.ObjectId `json:"id" bson:"_id"`
 	Name string
 	Sku string
-	price float64
+	Price float64
 }

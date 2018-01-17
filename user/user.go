@@ -8,34 +8,14 @@ type User struct {
 	Name string    //用户名
 	Password string   //密码
 	Email string    //邮箱
+	Mobile string  //电话号码
 	CareSku []string    //关注价格变动的sku
-	Repository UserRepository `inject:""`
 }
 
 
 type UserRepository interface {
-	Save(user User) (u User, err error)
+	Save(user User) (User, error)
 	Delete(name string) error
-	Update(user User) (u User,err error)
+	Update(user User) (User,error)
 	Find(name string) User
-}
-
-
-func (u User) Save() (User,error){
-
-	return u.Repository.Save(u)
-}
-
-func (u User) Update() (User,error){
-
-	return u.Repository.Update(u)
-}
-
-func (u User) Delete() error{
-
-	return u.Repository.Delete(u.Name)
-}
-
-func (u User) Find() User{
-	return u.Repository.Find(u.Name)
 }

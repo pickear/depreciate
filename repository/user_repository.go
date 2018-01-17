@@ -11,15 +11,11 @@ type UserRepositoryImpl struct{
 }
 
 func (repository UserRepositoryImpl) Save(user user.User) (user.User, error){
-	user.Id = bson.NewObjectId()
+	if len(user.Id) <= 0{
+		user.Id = bson.NewObjectId()
+	}
 	fmt.Println("user save")
 	_,err := repository.collection().Upsert(bson.M{"_id":user.Id},user)
-	if(err != nil){
-		fmt.Println(err)
-		return user,err
-	}
-
-	err = repository.collection().Find(bson.M{"name":user.Name}).One(&user)
 	if(err != nil){
 		fmt.Println(err)
 		return user,err
