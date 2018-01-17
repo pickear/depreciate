@@ -28,7 +28,8 @@ func TestUserSave(t *testing.T){
 		fmt.Println(err)
 	}
 	
-	_,err = userRepository.Save(modle.User{Name:"Dylan",Password:"123",Email:"54646@qq.com"})
+	u := modle.User{Name:"Dylan",Password:"123",Email:"54646@qq.com",CareSkus:map[string]float64{"J_1997796332":3398.0}}
+	_,err = userRepository.Save(u)
 
 	assert.Equal(err,nil,"save user err")
 }

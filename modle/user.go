@@ -9,9 +9,8 @@ type User struct {
 	Password string   //密码
 	Email string    //邮箱
 	Mobile string  //电话号码
-	CareSku []string    //关注价格变动的sku
+	CareSkus map[string]float64    //关注价格变动的sku
 }
-
 
 type UserRepository interface {
 	//保存用户(新增，更新)

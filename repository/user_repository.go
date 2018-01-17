@@ -11,16 +11,22 @@ type UserRepositoryImpl struct{
 }
 
 func (repository UserRepositoryImpl) Save(user modle.User) (modle.User, error){
-	if len(user.Id) <= 0{
+
+	u,err := repository.Find(user.Name)
+	if err != nil{
 		user.Id = bson.NewObjectId()
-	}
-	fmt.Println("user save")
-	_,err := repository.collection().Upsert(bson.M{"_id":user.Id},user)
-	if(err != nil){
-		fmt.Println(err)
+		repository.collection().Insert(user)
 		return user,err
 	}
-	return user,nil
+
+	for k,v := range user.CareSkus{
+		if u.CareSkus == nil{
+			u.CareSkus = make(map[string]float64)
+		}
+		u.CareSkus[k] = v
+	}
+	_,err = repository.Update(u)
+	return user,err
 }
 
 func (repository UserRepositoryImpl) Delete(name string) error{

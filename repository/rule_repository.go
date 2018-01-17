@@ -15,7 +15,6 @@ func (repository RuleRepositoryImpl) Save(rule modle.Rule) (modle.Rule, error){
 	if len(rule.Id) <= 0{
 		rule.Id = bson.NewObjectId()
 	}
-	fmt.Println("rule save")
 	_,err := repository.collection().Upsert(bson.M{"_id":rule.Id},rule)
 	if(err != nil){
 		fmt.Println(err)
@@ -25,7 +24,6 @@ func (repository RuleRepositoryImpl) Save(rule modle.Rule) (modle.Rule, error){
 }
 
 func (repository RuleRepositoryImpl) Delete(id bson.ObjectId) error{
-	fmt.Println("user rule")
 	err := repository.collection().Remove(bson.M{"_id":id})
 	if err != nil{
 		fmt.Println(err)
@@ -35,8 +33,6 @@ func (repository RuleRepositoryImpl) Delete(id bson.ObjectId) error{
 }
 
 func (repository RuleRepositoryImpl) Update(rule modle.Rule) (modle.Rule,error){
-	fmt.Println("user rule")
-
 	err := repository.collection().Update(bson.M{"_id":rule.Id},rule)
 	if err != nil{
 		fmt.Println(err)
