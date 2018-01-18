@@ -4,10 +4,17 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+const(
+	JD = "jd"
+	TM = "tmall"
+	TB = "taobao"
+)
 type Rule struct {
 	Id bson.ObjectId `json:"id" bson:"_id"`
+	Platform string  //平台
 	Title string   //规则标题
 	Url string   //规则地址
+	Html string  //截取的html块的规则
 	Name string  //爬商品名称的规则
 	Sku string    //爬商品id的规则
 	Price string   //爬商品梅林的规则
@@ -34,19 +41,19 @@ type RuleRepository interface {
   京东的规则
 */
 func Jd() Rule{
-	return Rule{Name:"div[class='p-name'] a em",Sku:"div[class='p-price'] strong",Price:"div[class='p-price'] strong i"}
+	return Rule{Platform:JD,Html:"div[id='J_goodsList']",Name:"div[class='p-name p-name-type-2'] a em",Sku:"div[class='p-price'] strong",Price:"div[class='p-price'] strong i"}
 }
 
 /*
   天猫的规则
 */
 func Tmall() Rule{
-	return Rule{Name:"",Sku:"",Price:""}
+	return Rule{Platform:TM,Html:"div[id='J_ItemList']",Name:"div[class='productTitle productTitle-spu'] a",Sku:"",Price:"p[class='productPrice'] em"}
 }
 
 /*
   淘宝的规则
 */
 func Tb() Rule{
-	return Rule{Name:"",Sku:"",Price:""}
+	return Rule{Platform:TB,Html:"",Name:"",Sku:"",Price:""}
 }
