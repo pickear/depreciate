@@ -1,7 +1,7 @@
 package repository
 
 import(
-	"depreciate/modle"
+	"depreciate/model"
 	"depreciate/util"
 	"fmt"
 	"gopkg.in/mgo.v2"
@@ -12,7 +12,7 @@ type GoodsRepositoryImpl struct{
 	Mgo *mgo.Session `inject:""`
 }
 
-func (repository GoodsRepositoryImpl) Save(goods modle.Goods) (modle.Goods, error){
+func (repository GoodsRepositoryImpl) Save(goods model.Goods) (model.Goods, error){
 
 	g,err := repository.Find(goods.Sku)
 	if err != nil{
@@ -42,14 +42,14 @@ func (repository GoodsRepositoryImpl) Delete(sku string) error{
 	return nil
 }
 
-func (repository GoodsRepositoryImpl) Find(sku string) (modle.Goods,error){
-	var goods modle.Goods
+func (repository GoodsRepositoryImpl) Find(sku string) (model.Goods,error){
+	var goods model.Goods
 	err := repository.collection().Find(bson.M{"sku":sku}).One(&goods)
 	return goods,err
 }
 
-func (repository GoodsRepositoryImpl) Search(name string) []modle.Goods{
-	var goodss []modle.Goods
+func (repository GoodsRepositoryImpl) Search(name string) []model.Goods{
+	var goodss []model.Goods
 	err := repository.collection().Find(bson.M{"name":name}).All(&goodss)
 	if(err != nil){
 		fmt.Println(err)
@@ -63,9 +63,9 @@ func (gr GoodsRepositoryImpl) collection() *mgo.Collection{
 }
 
 //去重价格(如果价格一样，时间是同一天的价格条目就去掉)
-func (gr GoodsRepositoryImpl) distinctPrice(googds *modle.Goods){
+func (gr GoodsRepositoryImpl) distinctPrice(googds *model.Goods){
 
-	prices := make([]modle.Price,0)
+	prices := make([]model.Price,0)
 	//tmpMap := make(map[string]interface{})
 	tmpMap := make(map[string]float64)
 

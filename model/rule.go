@@ -1,4 +1,4 @@
-package modle
+package model
 
 import (
 	"gopkg.in/mgo.v2/bson"
@@ -33,20 +33,20 @@ type RuleRepository interface {
 /*
   京东的规则
 */
-func Jd() *Rule{
-	return &Rule{Name:"div.p-name a em",Sku:"div.p-price strong",Price:"div.p-price strong i"}
+func Jd() Rule{
+	return Rule{Name:"div[class='p-name'] a em",Sku:"div[class='p-price'] strong",Price:"div[class='p-price'] strong i"}
 }
 
 /*
   天猫的规则
 */
-func Tmall() *Rule{
-	return &Rule{Name:"",Sku:"",Price:""}
+func Tmall() Rule{
+	return Rule{Name:"",Sku:"",Price:""}
 }
 
 /*
   淘宝的规则
 */
-func Tb() *Rule{
-	return &Rule{Name:"",Sku:"",Price:""}
+func Tb() Rule{
+	return Rule{Name:"",Sku:"",Price:""}
 }

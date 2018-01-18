@@ -4,7 +4,7 @@ import (
 	"github.com/wspl/creeper"
 	"github.com/facebookgo/inject"
 	"depreciate/repository"
-	"depreciate/modle"
+	"depreciate/model"
 	"fmt"
 	"strconv"
 	"time"
@@ -36,7 +36,7 @@ func main(){
 		fmt.Println(err)
     }
 
-	r := modle.Jd()
+	r := model.Jd()
 	r.Title = "京东moto"
 	r.Url = "https://search.jd.com/Search?keyword=手机&enc=utf-8&page={@page}"
 	
@@ -54,8 +54,8 @@ func main(){
 			return
 		}
 		time := time.Now().Format(util.TimeLayout)
-		prices := []modle.Price{modle.Price{Price:price,Time:time}}
-		goods := modle.Goods{Name:c.String("name"),Sku:c.String("sku"),Prices:prices}
+		prices := []model.Price{model.Price{Price:price,Time:time}}
+		goods := model.Goods{Name:c.String("name"),Sku:c.String("sku"),Prices:prices}
 		goodsRepository.Save(goods)
 		fmt.Println(goods)
 		fmt.Println("===")

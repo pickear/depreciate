@@ -1,7 +1,7 @@
 package repository
 
 import(
-	"depreciate/modle"
+	"depreciate/model"
 	"fmt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -10,7 +10,7 @@ type UserRepositoryImpl struct{
 	Mgo *mgo.Session `inject:""`
 }
 
-func (repository UserRepositoryImpl) Save(user modle.User) (modle.User, error){
+func (repository UserRepositoryImpl) Save(user model.User) (model.User, error){
 
 	u,err := repository.Find(user.Name)
 	if err != nil{
@@ -39,7 +39,7 @@ func (repository UserRepositoryImpl) Delete(name string) error{
 	return nil
 }
 
-func (repository UserRepositoryImpl) Update(user modle.User) (modle.User,error){
+func (repository UserRepositoryImpl) Update(user model.User) (model.User,error){
 	fmt.Println("user update")
 
 	err := repository.collection().Update(bson.M{"name":user.Name},user)
@@ -50,8 +50,8 @@ func (repository UserRepositoryImpl) Update(user modle.User) (modle.User,error){
 	return user,nil
 }
 
-func (repository UserRepositoryImpl) Find(name string) (modle.User,error){
-	var user modle.User
+func (repository UserRepositoryImpl) Find(name string) (model.User,error){
+	var user model.User
 	err := repository.collection().Find(bson.M{"name":name}).One(&user)
 	if(err != nil){
 		fmt.Println(err)
