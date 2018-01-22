@@ -11,6 +11,7 @@ func main(){
 	//rule.Url = "https://search.jd.com/Search?keyword=手机&enc=utf-8"
 	rule := model.Tmall()
 	rule.Url = "https://list.tmall.com/search_product.htm?q=手机"
+	
 	goods := analyzer.Analyze(rule)
 	fmt.Println(goods)
 }

@@ -21,8 +21,6 @@ func Analyze(rule model.Rule) []model.Goods{
 			JDAnalyze(analyzer,rule,&goodss)
 		case model.TM:
 			TMAnalyze(analyzer,rule,&goodss)
-		case model.TB:
-			TBAnalyze(analyzer,rule,&goodss)
 		default:
 			fmt.Println("can not find analyzer")
 	}
@@ -62,23 +60,6 @@ func TMAnalyze(analyzer *colly.Collector,rule model.Rule,goodss *[]model.Goods){
 			name := s.Find(rule.Name).Text()
 			sku,_ := s.Attr("data-id")
 			priceStr,_ := s.Find(rule.Price).Attr("title")
-			price,_ := strconv.ParseFloat(priceStr,2)
-			time := time.Now().Format(util.TimeLayout)
-			prices := []model.Price{model.Price{Price:price,Time:time}}
-			goods := model.Goods{Name:name,Sku:sku,Prices:prices}
-			*goodss = append(*goodss,goods)
-		})
-	})
-}
-
-
-func TBAnalyze(analyzer *colly.Collector,rule model.Rule,goodss *[]model.Goods){
-
-	analyzer.OnHTML(rule.Html, func(html *colly.HTMLElement) {
-		html.DOM.Find("li.gl-item").Each(func(_ int,s *goquery.Selection){
-			name := s.Find(rule.Name).Text()
-			sku,_ := s.Find(rule.Sku).Attr("class")
-			priceStr := s.Find(rule.Price).Text()
 			price,_ := strconv.ParseFloat(priceStr,2)
 			time := time.Now().Format(util.TimeLayout)
 			prices := []model.Price{model.Price{Price:price,Time:time}}

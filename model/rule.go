@@ -50,10 +50,3 @@ func Jd() Rule{
 func Tmall() Rule{
 	return Rule{Platform:TM,Html:"div[id='J_ItemList']",Name:"div[class='productTitle productTitle-spu'] a",Sku:"",Price:"p[class='productPrice'] em"}
 }
-
-/*
-  淘宝的规则
-*/
-func Tb() Rule{
-	return Rule{Platform:TB,Html:"",Name:"",Sku:"",Price:""}
-}
