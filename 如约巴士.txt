@@ -1,0 +1,119 @@
+{
+"success":true,
+"code":200,
+"msg":"",
+"data":{
+    "index":2,
+	"count":2,
+	"limit":100,
+	"items":[
+	    {
+			"pcoupolist":{"4850682413855489526":[]},
+			"pcoupolistjson":null,
+			"productcouplists":{"4850682413855489526":[]},
+			"productcouplistsjson":null,
+			"propricelists":{"4850682413855489526":[{"cpo":"5439017656275601820","sun":3.0,"mon":3.0,"tue":3.0,"wed":3.0,"thur":3.0,"fri":3.0,"sat":3.0,"kct":10.0,"uti":"2018-04-24 09:41:23"}]},
+			"propricelistsjson":null,
+			"minmaxprices":{"4850682413855489526":"3-3"},
+			"minmaxpricesjson":null,
+			"Routeid":"4850682413855489526",
+			"Routenm":"林和西->同和",
+			"Routecd":"RY100167",
+			"Routeput":"12",
+			"Routespd":"8.2",
+			"Routedec":"林和西站、时代广场站、白云区医院、豪景花园站、地铁梅花园站、一五七医院站、同和总站",
+			"rbname":"RY163",
+			"proitems":[
+			     {"Product":{"cpo":"100021","cpn":"二巴二分（二汽）","cpt":"020-81986570","pno":"5439017656275601820","pnm":"林和西->同和","ptp":"3","ptpex":3,"rss":"林和西","res":"同和","rid":"4850682413855489526","rcd":"RY100167","rdc":"林和西站、时代广场站、白云区医院、豪景花园站、地铁梅花园站、一五七医院站、同和总站","rut":"12","spd":"8.2","ctp":"26","ctn":"二汽27座公交车","cmp":"25","cmt":"25","clp":"12","csc":"22","csd":"2018-05-02","ced":"2018-05-31","csb":"2018-04-24 00:00:00","seb":"2018-05-31 23:59:59","csp":"0.00","csf":"0.00","csy":"","ct":"2018/4/24 9:39:27","sty":"0","len":"8.2","rtype":"0","rbname":"RY163"},"pct":"22"}
+			],
+			"procouop":[],
+			"proprice":[
+			    {"cpo":"5439017656275601820","sun":3.0,"mon":3.0,"tue":3.0,"wed":3.0,"thur":3.0,"fri":3.0,"sat":3.0,"kct":10.0,"uti":"2018-04-24 09:41:23"}
+			],
+			"protimes":"18:00",
+			"protimesbyrid":"4850682413855489526-18:00|5439017656275601820;","minprc":"3",
+			"maxprc":"3",
+			"prolist":"5439017656275601820",
+			"productcouplist":[]
+		},
+		{"pcoupolist":{"4974887005241135322":[]},"pcoupolistjson":null,"productcouplists":{"4974887005241135322":[]},"productcouplistsjson":null,"propricelists":{"4974887005241135322":[{"cpo":"5688213724910572385","sun":3.0,"mon":3.0,"tue":3.0,"wed":3.0,"thur":3.0,"fri":3.0,"sat":3.0,"kct":10.0,"uti":"2018-04-24 09:42:24"}]},"propricelistsjson":null,"minmaxprices":{"4974887005241135322":"3-3"},"minmaxpricesjson":null,"Routeid":"4974887005241135322","Routenm":"同和->林和西","Routecd":"RY100166","Routeput":"12","Routespd":"8.2","Routedec":"同和总站、一五七医院站、地铁梅花园站、豪景花园站、白云区医院站、时代广场站、林和西站","rbname":"RY164","proitems":[{"Product":{"cpo":"100021","cpn":"二巴二分（二汽）","cpt":"020-81986570","pno":"5688213724910572385","pnm":"同和->林和西","ptp":"3","ptpex":3,"rss":"同和","res":"林和西","rid":"4974887005241135322","rcd":"RY100166","rdc":"同和总站、一五七医院站、地铁梅花园站、豪景花园站、白云区医院站、时代广场站、林和西站","rut":"12","spd":"8.2","ctp":"26","ctn":"二汽27座公交车","cmp":"25","cmt":"25","clp":"12","csc":"22","csd":"2018-05-02","ced":"2018-05-31","csb":"2018-04-24 00:00:00","seb":"2018-05-31 23:59:59","csp":"0.00","csf":"0.00","csy":"","ct":"2018/4/24 9:40:28","sty":"0","len":"8.2","rtype":"0","rbname":"RY164"},"pct":"22"}],"procouop":[],"proprice":[{"cpo":"5688213724910572385","sun":3.0,"mon":3.0,"tue":3.0,"wed":3.0,"thur":3.0,"fri":3.0,"sat":3.0,"kct":10.0,"uti":"2018-04-24 09:42:24"}],"protimes":"07:30","protimesbyrid":"4974887005241135322-07:30|5688213724910572385;","minprc":"3","maxprc":"3","prolist":"5688213724910572385","productcouplist":[]}
+		],
+	"minprc":null,
+	"shifttimes":null
+},
+"count":0
+}
+
+http://www.gzruyue.org.cn:8094/api/Product/ProductDayArrayList?pid=5124546980941518626
+
+{
+"success":true,
+"code":200,
+"msg":null,
+"data":{
+   "pct":"3",
+   "Product":{
+		"cpo":"100041",
+		"cpn":"一汽番分",
+		"cpt":"020-89009692",
+		"pno":"5124546980941518626",
+		"pnm":"岑村红花岗->珠江新城地铁站",
+		"ptp":"3",
+		"ptpex":0,
+		"rss":"岑村红花岗",
+		"res":"珠江新城地铁站",
+		"rid":"5192459894214281909",
+		"rcd":"RY100003",
+		"rdc":"岑村红花岗站(南)、科韵路公交场站(南)、员村山顶站(西)、花城广场西总站",
+		"rut":"50",
+		"spd":"12",
+		"ctp":"43",
+		"ctn":"一汽16座客车",
+		"cmp":"16",
+		"cmt":"16",
+		"clp":"8",
+		"csc":"15",
+		"csd":"2018-05-14",
+		"ced":"2018-05-18",
+		"csb":"2018-05-13 00:00:00",
+		"seb":"2018-05-18 23:59:59",
+		"csp":"0.00",
+		"csf":"0.00",
+		"csy":"",
+		"ct":"2018/5/13 10:08:12",
+		"sty":"0",
+		"len":"12",
+		"rtype":"0",
+		"rbname":"RY113"
+	},
+   "items":[
+		{
+			"date":"2018-05-16",
+			"priceyj":"4",
+			"clsinf":[
+				{"clsid":"1","clstm":"07:40","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308430"}],"seats":"0","week":"Wednesday","scheid":"","priceyj":""},
+				{"clsid":"2","clstm":"07:50","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308431"}],"seats":"0","week":"Wednesday","scheid":"","priceyj":""},
+				{"clsid":"3","clstm":"08:10","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308432"}],"seats":"0","week":"Wednesday","scheid":"","priceyj":""}
+			]
+		},
+		{
+			"date":"2018-05-17",
+			"priceyj":"4",
+			"clsinf":[
+				{"clsid":"1","clstm":"07:40","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308433"}],"seats":"0","week":"Thursday","scheid":"","priceyj":""},
+				{"clsid":"2","clstm":"07:50","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308434"}],"seats":"0","week":"Thursday","scheid":"","priceyj":""},
+				{"clsid":"3","clstm":"08:10","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308435"}],"seats":"3","week":"Thursday","scheid":"308435","priceyj":""}
+			]
+		},
+		{
+			"date":"2018-05-18",
+			"priceyj":"4",
+			"clsinf":[
+				{"clsid":"1","clstm":"07:40","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308436"}],"seats":"0","week":"Friday","scheid":"","priceyj":""},
+				{"clsid":"2","clstm":"07:50","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308437"}],"seats":"0","week":"Friday","scheid":"","priceyj":""},
+				{"clsid":"3","clstm":"08:10","ruttm":"","clstp":"0","cars":[{"car":"1","sechid":"308438"}],"seats":"5","week":"Friday","scheid":"308438","priceyj":""}
+			]
+		}
+   ]},
+"count":0
+}
