@@ -10,30 +10,40 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
+type Analyzer interface {
+	analyze(rule model.Rule) interface{}
+}
 
-func Analyze(rule model.Rule) []model.Goods{
+func Analyze(platform,url string) interface{}{
 
-	analyzer := colly.NewCollector()
-
-	var goodss []model.Goods
-	switch rule.Platform{
-		case model.JD:
-			JDAnalyze(analyzer,rule,&goodss)
-		case model.TM:
-			TMAnalyze(analyzer,rule,&goodss)
-		default:
-			fmt.Println("can not find analyzer")
+	collector := colly.NewCollector()
+	var analyzer Analyzer
+	var rule model.Rule
+	switch platform {
+	case model.JD:
+		analyzer = JDAnalyzer{collector}
+		rule = model.Jd(url)
+	case model.TM:
+		analyzer = TMAnalyzer{collector}
+		rule = model.Tmall(url)
+	case model.RY:
+		analyzer = RuYueAnalyzer{collector}
+		rule = model.RuYue(url)
+	default:
+		fmt.Println("can not find analyzer")
 	}
 
-	analyzer.OnRequest(func(request *colly.Request) {
+	result := analyzer.analyze(rule)
+
+	collector.OnRequest(func(request *colly.Request) {
 		fmt.Println("visiting", request.URL.String())
 	})
 
-	analyzer.OnError(func(response *colly.Response,err error) {
+	collector.OnError(func(response *colly.Response,err error) {
 		fmt.Println("visit error happend...")
 	})
-	analyzer.Visit(rule.Url)
-	return goodss
+	collector.Visit(rule.Url)
+	return result
 }
 
 

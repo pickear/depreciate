@@ -8,6 +8,7 @@ const(
 	JD = "jd"
 	TM = "tmall"
 	TB = "taobao"
+	RY = "ruyue"
 )
 type Rule struct {
 	Id bson.ObjectId `json:"id" bson:"_id"`
@@ -40,13 +41,17 @@ type RuleRepository interface {
 /*
   京东的规则
 */
-func Jd() Rule{
-	return Rule{Platform:JD,Html:"div[id='J_goodsList']",Name:"div[class='p-name p-name-type-2'] a em",Sku:"div[class='p-price'] strong",Price:"div[class='p-price'] strong i"}
+func Jd(url string) Rule{
+	return Rule{Platform:JD,Url:url,Html:"div[id='J_goodsList']",Name:"div[class='p-name p-name-type-2'] a em",Sku:"div[class='p-price'] strong",Price:"div[class='p-price'] strong i"}
 }
 
 /*
   天猫的规则
 */
-func Tmall() Rule{
-	return Rule{Platform:TM,Html:"div[id='J_ItemList']",Name:"div[class='productTitle productTitle-spu'] a",Sku:"",Price:"p[class='productPrice'] em"}
+func Tmall(url string) Rule{
+	return Rule{Platform:TM,Url:url,Html:"div[id='J_ItemList']",Name:"div[class='productTitle productTitle-spu'] a",Sku:"",Price:"p[class='productPrice'] em"}
+}
+
+func RuYue(url string) Rule  {
+	return Rule{Platform:TM,Url:url,Html:"div[id='J_ItemList']",Name:"div[class='productTitle productTitle-spu'] a",Sku:"",Price:"p[class='productPrice'] em"}
 }
