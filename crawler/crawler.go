@@ -14,7 +14,14 @@ func main(){
 
 	//url := "https://search.jd.com/Search?keyword=手机&enc=utf-8"
 	//url := "https://list.tmall.com/search_product.htm?q=手机"
-    url := "http://www.gzruyue.org.cn:8094/api/Product/ProductDayArrayList?pid=5124546980941518626"
+	ticker := time.NewTicker(time.Minute * 15)
+	for _ = range ticker.C{
+		doAnalyze()
+	}
+}
+
+func doAnalyze()  {
+	url := "http://www.gzruyue.org.cn:8094/api/Product/ProductDayArrayList?pid=5124546980941518626"
 	ruyueReponse := analyzer.Analyze(model.RY,url)
 	var message bytes.Buffer
 	tellFollwer := false
