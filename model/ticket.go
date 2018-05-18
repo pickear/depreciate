@@ -1,13 +1,29 @@
 package model
 
-type Ticket struct {
-
-	Clstm string  //出发钟点
-	Seats string  //票数
+type RuYueResponse struct {
+	Success bool `json:"success"`
+	Code int `json:"code"`
+	Data Data `json:"data"`
 }
 
-type Shifts struct {
-	Pnm string  //首发站->尾站
-	Rdc string   //经过的站点
-	tickets map[string][]Ticket   //某一天的所有时间点的票
+type Data struct {
+	Pct string `json:"pct"`
+	Product Product `json:"Product"`
+	Items []Item `json:"items"`
 }
+
+type Product struct {
+	Pnm string `json:"pnm"`
+	Rdc string `json:"rdc"`
+}
+
+type Item struct {
+	Date string `json:"date"`
+	Priceyj string `json:"priceyj"`
+	Clsinf []Clsinf `json:"clsinf"`
+}
+
+type Clsinf struct {
+	Clstm string `json:"clstm"`
+	Seats string `json:"seats"`
+} 

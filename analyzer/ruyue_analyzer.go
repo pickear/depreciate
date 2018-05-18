@@ -13,19 +13,14 @@ type RuYueAnalyzer struct {
 
 
 func (ruYueAnalyzer RuYueAnalyzer) analyze(rule model.Rule)(interface{})  {
-	mapResult := make(map[string]interface{})
-	shifts := model.Shifts{}
+	ruyueReponse := model.RuYueResponse{}
 	ruYueAnalyzer.collector.OnResponse(func(response *colly.Response) {
-		err := json.Unmarshal(response.Body[:],&mapResult)
+		err := json.Unmarshal(response.Body[:],&ruyueReponse)
 		if err != nil{
 			println(err)
 		}
 
-		data,_ := mapResult["data"]
-		product,_ := data.(map[string]interface{})["Product"]
-		shifts.Pnm,_ = string.(product.(map[string]interface{})["pnm"])
-
-		fmt.Printf("%s\n", mapResult)
+		fmt.Printf("%s\n", ruyueReponse)
 	})
-	return &shifts
+	return &ruyueReponse
 }
